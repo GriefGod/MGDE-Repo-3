@@ -51,7 +51,7 @@ public class Game_Manager : MonoBehaviour
         Debug.Log("Trigger initialise");
 
 
-        updateUI.UpdateCoinsLeft(); //set grand total coins left
+     updateUI.UpdateCoinsLeft(); //set grand total coins left
 
      setPlayerControls(); //check control options before starting game
 
@@ -62,14 +62,14 @@ public class Game_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("getpoint() = true");
+     //d   Debug.Log("getpoint() = true");
         if (trigger.getPoint() == true) //when player gets a point
         {
             updateUI.updateScore();
             updateUI.UpdateCoinsLeft();
             trigger.setPoint(false);
         }
-        Debug.Log("getpoint successful");
+       // Debug.Log("getpoint successful");
         if (trigger.getPowerState() == true) //when player has a power up, set a count down
         {
            
@@ -92,7 +92,7 @@ public class Game_Manager : MonoBehaviour
 
         if (trigger.isDeadState() == true) //when player is dead, recieving end screen alert
         {
-            print("Player is dead");
+          //  print("Player is dead");
             endScreen.SetActive(true);
             Time.timeScale = 0;
             /*
@@ -106,6 +106,7 @@ public class Game_Manager : MonoBehaviour
 
         if (updateUI.PlayerWins == true && end == false)
         {
+          //GetComponent<CanvasManager>().disablePauseMenu();
             WinScreen.SetActive(true);
             timetext.text = "Time Taken: " + TimeTaken.ToString("0.00");
             end = true;
@@ -168,4 +169,6 @@ public class Game_Manager : MonoBehaviour
 
         }
     }
+
+
 }

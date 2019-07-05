@@ -30,16 +30,27 @@ public class CanvasManager : MonoBehaviour
     private bool toggle = true; //check if toggle is true
     private int level = 0; //use to keep track on what is the current level
     private int controlSelect; //what control options did the player use, links to controls in option
-
+    
+    public void disablePauseMenu()
+    {
+        pauseButtonUI.SetActive(false);
+    }
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPause = false;
-        //joystickUI.SetActive(true);
-        Debug.Log("failed to set joystick to inactive");
-        //GameObject.Find("Variable Joystick").SetActive(true);
-        joystickui.SetActive(true);
+        try
+        {
+            //joystickUI.SetActive(true);
+            Debug.Log("failed to set joystick to inactive");
+            //GameObject.Find("Variable Joystick").SetActive(true);
+            joystickui.SetActive(true);
+        }
+        catch (System.Exception)
+        {
+
+        }
         Debug.Log("Joystick active");
 
         pauseButtonUI.SetActive(true);
@@ -52,11 +63,18 @@ public class CanvasManager : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPause = true;
         //joystickUI.SetActive(false);
-        joystickui = GameObject.Find("Variable Joystick");
-        
+        try
+        {
+            joystickui = GameObject.Find("Variable Joystick");
+
+
 
             joystickui.SetActive(false);
-        
+        }
+        catch (System.Exception)
+        {
+
+        }
 
         Debug.Log("Joystick inactive");
 
@@ -79,6 +97,7 @@ public class CanvasManager : MonoBehaviour
     }
 
 
+
     public void UpdateLevelChange(int level) //use on buttons that will change scene, excluding play button. Disables menu or pause depedning on scene
     {
         if (level != 0)
@@ -89,10 +108,10 @@ public class CanvasManager : MonoBehaviour
         }
         else
         {
-            
+            print("Main Menu : "  + mainMenuUI.activeSelf);
             mainMenuUI.SetActive(true);
             pauseButtonUI.SetActive(false);
-           
+            print("Main Menu : " + mainMenuUI.activeSelf);
             pauseMenuUI.SetActive(false);
         }
 
@@ -104,7 +123,7 @@ public class CanvasManager : MonoBehaviour
         //Note: Turning off option page is already set in Option buttion using Unity setactive.
         if (SceneManager.GetActiveScene().name == "Start Menu" && mainMenuUI.activeSelf == false) //in menu and menuPage is turned off
         {
-
+         
             mainMenuUI.SetActive(true); //turn on menu page and turn off option page
             
         }
