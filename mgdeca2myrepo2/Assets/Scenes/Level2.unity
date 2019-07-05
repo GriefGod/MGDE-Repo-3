@@ -868,6 +868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7273234703835077054, guid: 67a95e5c2f0a324438a06d053d7312fb,
+        type: 3}
+      propertyPath: variableJoystick
+      value: 
+      objectReference: {fileID: 37020001}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,11 +928,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7273234703835077054, guid: 67a95e5c2f0a324438a06d053d7312fb,
-        type: 3}
-      propertyPath: variableJoystick
-      value: 
-      objectReference: {fileID: 37020001}
     - target: {fileID: 7273234704842295265, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: EnemyDeathSFX
@@ -2654,6 +2654,38 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056860132038503445, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 227974806456700310, guid: 6f212c4a58c6819429338c95f24ffb7f,
+        type: 3}
+    - target: {fileID: 8056860132038503445, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056860132038503445, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197038962989865, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 227974806456700310, guid: 6f212c4a58c6819429338c95f24ffb7f,
+        type: 3}
+    - target: {fileID: 8926197038962989865, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197038962989865, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de74ee0bb953b6b468db2067fb1efe19, type: 3}
