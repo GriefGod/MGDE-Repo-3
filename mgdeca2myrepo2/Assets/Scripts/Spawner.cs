@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
 
     public MeshRenderer render;
     public SphereCollider enemyCollider;
+
+    public AudioSource EnemySpawnSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class Spawner : MonoBehaviour
 
     private void Respawn()
     {
+        EnemySpawnSFX.Play();
         print("Respawn!!!!!");
         render.enabled  = true;
         enemyCollider.enabled = true;

@@ -25,6 +25,7 @@ public class Game_Manager : MonoBehaviour
     private bool end = false; //end the game and prevents further update in end screen
     private float timeleft = 0;
 
+    public AudioSource BGM;
     void Awake()
     {
 
@@ -42,13 +43,15 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+     BGM.Play();
+
      updateUI = GetComponent<Point_Coordinator>();  //initialse Point_Coordinator object
+        Debug.Log("Point Coordinator triggered");
+        trigger = Player.GetComponent<Trigger_Checkers>(); //initialse trigger object
+        Debug.Log("Trigger initialise");
 
-     trigger = Player.GetComponent<Trigger_Checkers>(); //initialse trigger object
 
-        
-
-     updateUI.UpdateCoinsLeft(); //set grand total coins left
+        updateUI.UpdateCoinsLeft(); //set grand total coins left
 
      setPlayerControls(); //check control options before starting game
 
@@ -59,13 +62,14 @@ public class Game_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("getpoint() = true");
         if (trigger.getPoint() == true) //when player gets a point
         {
             updateUI.updateScore();
             updateUI.UpdateCoinsLeft();
             trigger.setPoint(false);
         }
-
+        Debug.Log("getpoint successful");
         if (trigger.getPowerState() == true) //when player has a power up, set a count down
         {
            
