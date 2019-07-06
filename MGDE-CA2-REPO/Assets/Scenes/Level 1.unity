@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -605,41 +605,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8926197038676013392, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197037108029278, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197037390869062, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197037390869062, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -92
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197037108029279, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197038952424195, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197038962989867, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8056860132038503445, guid: de74ee0bb953b6b468db2067fb1efe19,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -932,6 +897,46 @@ PrefabInstance:
     - target: {fileID: 8926197038962989865, guid: de74ee0bb953b6b468db2067fb1efe19,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358145222252172373, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197038676013392, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197037108029278, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197037390869062, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197037390869062, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -92
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197037108029279, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197038952424195, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197038962989867, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2543,6 +2548,16 @@ PrefabInstance:
       propertyPath: timetext
       value: 
       objectReference: {fileID: 1621747799}
+    - target: {fileID: 2143195003911626891, guid: 8421aaecc06193f4faa81d0fdfbd70cf,
+        type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 236487808}
+    - target: {fileID: 2143195003911626891, guid: 8421aaecc06193f4faa81d0fdfbd70cf,
+        type: 3}
+      propertyPath: PlayerObjects
+      value: 
+      objectReference: {fileID: 1515659872557087306}
     - target: {fileID: 2143195003911626892, guid: 8421aaecc06193f4faa81d0fdfbd70cf,
         type: 3}
       propertyPath: scoreUI

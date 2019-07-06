@@ -6,26 +6,26 @@ using UnityEngine;
 public class Game_Manager : MonoBehaviour
 {
     //Handles points system, pause system and object spawning, death animations;
-    int testhello;
+    
     Point_Coordinator updateUI; //activate scoring script
     Trigger_Checkers trigger;
 
-    public GameObject endScreen;
-    public GameObject  WinScreen;
+    public GameObject GameOverScreen; //Display when player dies, game over
+    public GameObject  WinScreen; //Display when player wins
 
     
-    public GameObject Player; //activate scoring script
-    public GameObject PlayerControls;//for disabling acclerometer, gyro and joytick scripts
+    public GameObject PlayerControls; //activate scoring script, add player objects
+    public GameObject PlayerObjects;//for disabling accelerometer, gyro and joystick scripts
     public GameObject joystickUI; //for disabling and enabling canvas object joystick.
-    public TextMeshProUGUI timetext; //displaying power up durations
+    public TextMeshProUGUI timetext; //displays power up durations
     private CanvasManager controltype; // check control type before game starts
 
     private float TimeTaken = 0; //controls time taken to bet the game;
     public int powerUpduration; //set duration of power up
     private bool end = false; //end the game and prevents further update in end screen
-    private float timeleft = 0;
+    private float timeleft = 0; 
 
-    public AudioSource BGM;
+    public AudioSource BGM; //Background Music
     void Awake()
     {
 
@@ -47,7 +47,7 @@ public class Game_Manager : MonoBehaviour
 
      updateUI = GetComponent<Point_Coordinator>();  //initialse Point_Coordinator object
         Debug.Log("Point Coordinator triggered");
-        trigger = Player.GetComponent<Trigger_Checkers>(); //initialse trigger object
+        trigger = PlayerObjects.GetComponent<Trigger_Checkers>(); //initialse trigger object
         Debug.Log("Trigger initialise");
 
 
@@ -90,21 +90,22 @@ public class Game_Manager : MonoBehaviour
 
         }
 
-        if (trigger.isDeadState() == true) //when player is dead, recieving end screen alert
+        if (trigger.isDeadState() == true) //when player is dead, game over screen activates
         {
-          //  print("Player is dead");
-            endScreen.SetActive(true);
+            //  print("Player is dead");
+            GameOverScreen.SetActive(true);
             Time.timeScale = 0;
-            /*
+
             if (controltype.getVibration())
             {
+                Debug.Log("Vibrate");
                 Handheld.Vibrate();
             }
-            */
+
 
         }
 
-        if (updateUI.PlayerWins == true && end == false)
+        if (updateUI.PlayerWins == true && end == false) //when player wins, stops game from running
         {
           //GetComponent<CanvasManager>().disablePauseMenu();
             WinScreen.SetActive(true);
@@ -121,12 +122,12 @@ public class Game_Manager : MonoBehaviour
 
     }
 
-    public void ReloadScene()
+    public void ReloadScene() // Reloads the Scene
     {
         controltype.ReloadScene();
     }
 
-    public void ToMenu()
+    public void ToMenu() //Goes back to Start Menu
     {
         controltype.UpdateLevelChange(0);
         controltype.LevelSelection("Start Menu");
@@ -139,25 +140,26 @@ public class Game_Manager : MonoBehaviour
         int type = 0;
         if (controltype != null)
         {
-            type = controltype.checkSelectedControls(); //take selection type from canvas script, 0 for joystick, 1 for accelro, 2 for gyro
+            //take selection type from canvas script, 0 for joystick, 1 for accelerometer, 2 for gyroscope
+            type = controltype.checkSelectedControls(); 
             print("Type is " + type);
 
             switch (type)
             {
-                case 0: //disable acclero and gyro
+                case 0: //disable accelerometer and gyroscope
                     PlayerControls.GetComponent<Accelerometer>().enabled = false;
                     PlayerControls.GetComponent<GyroScope>().enabled= false;
                     PlayerControls.GetComponent<JoystickPlayerExample>().enabled = true;
                     joystickUI.SetActive(true);
 
                     break;
-                case 1: //disable joystick, and gyro
+                case 1: //disable joystick, and gyroscope
                     PlayerControls.GetComponent<Accelerometer>().enabled = true;
                     PlayerControls.GetComponent<GyroScope>().enabled = false;
                     PlayerControls.GetComponent<JoystickPlayerExample>().enabled = false;
                     joystickUI.SetActive(false);
                     break;
-                case 2: //disable acclero and joystick
+                case 2: //disable accelerometer and joystick
                     PlayerControls.GetComponent<Accelerometer>().enabled = false;
                     PlayerControls.GetComponent<GyroScope>().enabled = true;
                     PlayerControls.GetComponent<JoystickPlayerExample>().enabled = false;
