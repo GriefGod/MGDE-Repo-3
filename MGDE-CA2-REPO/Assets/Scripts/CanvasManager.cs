@@ -9,78 +9,31 @@ public class CanvasManager : MonoBehaviour
     //set UI active and disable UI
     private static CanvasManager Instance;
 
-    public GameObject pauseMenuUI;
-    public GameObject pauseButtonUI;
-    public GameObject mainMenuUI;
+    public GameObject pauseMenuUI; //pause menu in game level
+    public GameObject pauseButtonUI; //button to pause
+    public GameObject mainMenuUI; //main menu in start menu
     
-    public GameObject gameOverUI;
-    public GameObject OptionsMenuUI;
-    public GameObject SryText; //for telling player gyro unsupported
-    private GameObject joystickui;
-    public TMP_Dropdown controltxt;
+    public GameObject gameOverUI; //game over when player is dead 
+    public GameObject OptionsMenuUI; //options menu
+    public GameObject GyroUnSupportedTxt; //for telling player gyro unsupported
+    private GameObject joyStickUI; //joystick
+    public TMP_Dropdown controltxt; 
 
-    public string hello;
     public bool GameIsPause = false;
     //public GameObject joystickUI;
 
+        //Calibration variables
     public float  offsetCalX =0;
     public float  offsetCalY =0;
     public float  offsetCalZ =0;
 
+    //control selection variables
     private bool toggle = true; //check if toggle is true
     private int level = 0; //use to keep track on what is the current level
     private int controlSelect; //what control options did the player use, links to controls in option
     
-    public void disablePauseMenu()
-    {
-        pauseButtonUI.SetActive(false);
-    }
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPause = false;
-        try
-        {
-            //joystickUI.SetActive(true);
-            Debug.Log("failed to set joystick to inactive");
-            //GameObject.Find("Variable Joystick").SetActive(true);
-            joystickui.SetActive(true);
-        }
-        catch (System.Exception)
-        {
-
-        }
-        Debug.Log("Joystick active");
-
-        pauseButtonUI.SetActive(true);
-        Debug.Log("pause button shown");
-    }
-
-    public void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPause = true;
-        //joystickUI.SetActive(false);
-        try
-        {
-            joystickui = GameObject.Find("Variable Joystick");
-
-
-
-            joystickui.SetActive(false);
-        }
-        catch (System.Exception)
-        {
-
-        }
-
-        Debug.Log("Joystick inactive");
-
-        pauseButtonUI.SetActive(false);
-        Debug.Log("pause button hidden");
-    }
+    
+    
     private void Awake()
     {
         if (Instance != null)
@@ -136,7 +89,7 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    public  void setGameOverScreen()
+    public  void setGameOverScreen() //sets game over screen to true
     {
         gameOverUI.SetActive(true);
     }
@@ -146,7 +99,7 @@ public class CanvasManager : MonoBehaviour
  
         controlSelect = selection;
         controltxt.Hide();
-        if (selection == 2) { gyroSurpportedCheck();  }
+        if (selection == 2) { gyroSupportedCheck();  }
     }
 
     public int checkSelectedControls()
@@ -164,12 +117,12 @@ public class CanvasManager : MonoBehaviour
         return toggle;
     }
 
-    public void gyroSurpportedCheck() //check if phone supports gyro scope, if not enable sory screen
+    public void gyroSupportedCheck() //check if phone supports gyro scope, if not enable sorry screen saying gyro unsupported
     {
         if (!SystemInfo.supportsGyroscope)
         {
             Destroy(controltxt.transform.Find("Dropdown List").gameObject); //this is to destroy dropdown list to remedy a unity bug where disabling menu will break the dropdown
-            SryText.SetActive(true);
+            GyroUnSupportedTxt.SetActive(true);
             OptionsMenuUI.SetActive(false);
             controltxt.value = 0;
             controlSelect = 0;
@@ -216,4 +169,56 @@ public class CanvasManager : MonoBehaviour
      *  Rmb to add exception to not only main menu but also selection screen. 
      *  Yay.
      * -----------------------------------*/
+
+    public void Resume() // Resumes game play
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPause = false;
+        //try
+        //{
+        //    //joystickUI.SetActive(true);
+
+        //    //GameObject.Find("Variable Joystick").SetActive(true);
+        //    joyStickUI.SetActive(true);
+        //}
+        //catch (System.Exception)
+        //{
+
+        //}
+        if (controlSelect == 0)
+        {
+            joyStickUI.SetActive(true);
+        }
+
+        pauseButtonUI.SetActive(true);
+
+    }
+
+    public void Pause() // Pauses game play
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPause = true;
+        //joystickUI.SetActive(false);
+        //try
+        //{
+        //    joyStickUI = GameObject.Find("Variable Joystick");
+        //    joyStickUI.SetActive(false);
+        //}
+        //catch (System.Exception)
+        //{
+
+        //}
+        if (controlSelect == 0)
+        {
+            joyStickUI = GameObject.Find("Variable Joystick");
+            joyStickUI.SetActive(false);
+        }
+
+
+        pauseButtonUI.SetActive(false);
+
+    }
+
 }
