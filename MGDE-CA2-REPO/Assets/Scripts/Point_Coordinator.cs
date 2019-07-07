@@ -29,7 +29,7 @@ public class Point_Coordinator : MonoBehaviour
     {
 
     }
-
+/*
     //Updates the score for the score UI
 public  void updateScore(int currentscore)
     {
@@ -42,13 +42,14 @@ public  void updateScore()
         score++;
         scoreUI.text = "Score  " + score.ToString();
     }
+    */
 
     //updates how many coins are left on the UI
 public void UpdateCoinsLeft()
     {
       coins  = GameObject.FindGameObjectsWithTag("Coins").Length;
 
-        coinsUI.text = "Coins Left: " + coins.ToString();
+        coinsUI.text = ": " + coins.ToString();
         if (coins == 0) { PlayerWins = true; } //player wins when all coins are false, this value is sent to gamemanger to display end screen
 
     }

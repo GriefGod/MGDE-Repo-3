@@ -65,7 +65,7 @@ public class Game_Manager : MonoBehaviour
      //d   Debug.Log("getpoint() = true");
         if (trigger.getPoint() == true) //when player gets a point
         {
-            updateUI.updateScore();
+          //  updateUI.updateScore();
             updateUI.UpdateCoinsLeft();
             trigger.setPoint(false);
         }

@@ -30,7 +30,7 @@ public class Trigger_Checkers : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-
+        print("Collision" + collider.name);
         if (collider.gameObject.CompareTag("Enemy") && power_up == false) //when player touches enemy, dies by SetActive false for now. 
         {
             isDead = true;
