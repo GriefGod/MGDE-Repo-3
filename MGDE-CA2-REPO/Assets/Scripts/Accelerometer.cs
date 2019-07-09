@@ -10,18 +10,19 @@ public class Accelerometer : MonoBehaviour
     public float tiltSpeedLimit = 0.8f;
     public float tiltLimit = 2;
     public float tiltSpeed = 5;
+    private Vector3 tilt_force = Vector3.zero; //get tilt info
 
 
-   
 
-    //Setting gyro 
+    //Setting acclero
     private GameObject Setting;
-   // public Setting_Menu isgyro = true;
+    private CanvasManager accelroOffset;
+    // public Setting_Menu isgyro = true;
     // Start is called before the first frame update
     void Start()
     {
-       
-            rb= GetComponent<Rigidbody>(); //for ball
+        accelroOffset = FindObjectOfType<CanvasManager>();
+        rb = GetComponent<Rigidbody>(); //for ball
         
         
 
@@ -38,15 +39,16 @@ public class Accelerometer : MonoBehaviour
     {
         if (new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 0.1)
         {
-            Vector3 tilt_force = Input.acceleration * speed; //using accleration input to measure tiltness in terms of tilt_force
+            Vector3 tilt_force = Vector3.zero;
+            tilt_force.x = Input.acceleration.x - accelroOffset.calibratedtilt.x; //using accleration input to measure tiltness in terms of tilt_force
+            tilt_force.y = Input.acceleration.y - accelroOffset.calibratedtilt.y ; //using accleration input to measure tiltness in terms of tilt_force
 
 
             float tiltX = Mathf.Clamp(tilt_force.x, -tiltSpeedLimit, tiltSpeedLimit); //limits the max tiltspeed in x coordinates;
             float tiltY = Mathf.Clamp(tilt_force.y, -tiltSpeedLimit, tiltSpeedLimit); //limits the max tiltspeed in y coordinates;
+            tilt_force = Quaternion.Euler(90, 90, 0) * tilt_force;
 
-
-
-            rb.AddTorque(tilt_force.y  , 0, -1 * tilt_force.x);
+            rb.AddTorque(tilt_force * speed ); //add force to the ball via torque
 
         }
 

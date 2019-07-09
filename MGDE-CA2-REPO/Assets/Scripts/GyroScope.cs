@@ -51,6 +51,6 @@ public class GyroScope : MonoBehaviour
 
         //combine two codes
         
-        rb.AddTorque(1 * (gyro.attitude.y - gyrOffset.offsetCalY) * strenght, 0, -1 * (gyro.attitude.x - gyrOffset.offsetCalX )* strenght); //
+        rb.AddTorque( -1* (gyro.attitude.y - gyrOffset.offsetCalY) * strenght, 0, (gyro.attitude.x - gyrOffset.offsetCalX )* strenght); //makes up and down correct
     }
 }

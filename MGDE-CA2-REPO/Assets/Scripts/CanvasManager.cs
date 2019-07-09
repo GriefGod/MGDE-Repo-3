@@ -27,6 +27,9 @@ public class CanvasManager : MonoBehaviour
     public float  offsetCalY =0;
     public float  offsetCalZ =0;
 
+    //Calibration variables accelrometer
+    public Vector3 calibratedtilt = Vector3.zero;
+
     //control selection variables
     private bool toggle = true; //check if toggle is true
     private int level = 0; //use to keep track on what is the current level
@@ -136,7 +139,7 @@ public class CanvasManager : MonoBehaviour
     public  void Calibrator() //calibrates  phone to a specfic offset
     {
 
-        if (SystemInfo.supportsGyroscope)
+        if (SystemInfo.supportsGyroscope) // calibaration for  gyro
         {
 
             gyro = Input.gyro;
@@ -147,6 +150,14 @@ public class CanvasManager : MonoBehaviour
             offsetCalY = gyro.attitude.y;
             offsetCalZ = gyro.attitude.z;
             gyro.enabled = false;
+        }
+
+        {//calibration for acclerometer
+            calibratedtilt.x = Input.acceleration.x;
+            calibratedtilt.y = Input.acceleration.y;
+            calibratedtilt.z = Input.acceleration.z;
+
+            print("Cal values" + calibratedtilt.x);
         }
        
     }
@@ -163,12 +174,7 @@ public class CanvasManager : MonoBehaviour
     public void QuitGame() { Application.Quit(); } //quit app
 
     public void ReloadScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().name); pauseMenuUI.SetActive(false); } //reset scne
-    /*-----------------------------Rmb to use active scenes to check for loaded scene in next code revision
-     *  Current build, uses a in class integer to keep track of scene change which will not be very good when there
-     *  are multiple methods to switch scenes that are not all functioning in the class.
-     *  Rmb to add exception to not only main menu but also selection screen. 
-     *  Yay.
-     * -----------------------------------*/
+   
 
     public void Resume() // Resumes game play
     {

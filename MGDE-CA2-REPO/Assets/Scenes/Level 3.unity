@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -758,40 +758,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7273234703835077054, guid: 67a95e5c2f0a324438a06d053d7312fb,
+        type: 3}
+      propertyPath: variableJoystick
+      value: 
+      objectReference: {fileID: 1175527460}
+    - target: {fileID: 7273234703835077050, guid: 67a95e5c2f0a324438a06d053d7312fb,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7b738ca59c2f6ad44a7a1778991d9406,
+        type: 2}
+    - target: {fileID: 7273234704842295278, guid: 67a95e5c2f0a324438a06d053d7312fb,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273234704842295278, guid: 67a95e5c2f0a324438a06d053d7312fb,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.000103
+      value: -7.000158
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.49995
+      value: 12.999914
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000010536648
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071025
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000010536776
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.70711106
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7273234704679993973, guid: 67a95e5c2f0a324438a06d053d7312fb,
         type: 3}
@@ -812,21 +833,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273234703835077054, guid: 67a95e5c2f0a324438a06d053d7312fb,
-        type: 3}
-      propertyPath: variableJoystick
-      value: 
-      objectReference: {fileID: 1175527460}
-    - target: {fileID: 7273234704842295278, guid: 67a95e5c2f0a324438a06d053d7312fb,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273234704842295278, guid: 67a95e5c2f0a324438a06d053d7312fb,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7273234703835077055, guid: 67a95e5c2f0a324438a06d053d7312fb, type: 3}
@@ -1498,6 +1504,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2423442176541243397, guid: 06bbb166a951efc4d981b915268c890c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2423442176953447524, guid: 06bbb166a951efc4d981b915268c890c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1577,11 +1588,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Respawn_Time
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423442176541243397, guid: 06bbb166a951efc4d981b915268c890c,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2423442176541243403, guid: 06bbb166a951efc4d981b915268c890c,
         type: 3}
@@ -2879,16 +2885,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReloadScene
       objectReference: {fileID: 0}
-    - target: {fileID: 8926197037108029277, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8926197037108029277, guid: de74ee0bb953b6b468db2067fb1efe19,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8926197037875652001, guid: de74ee0bb953b6b468db2067fb1efe19,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2898,6 +2894,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197037108029277, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926197037108029277, guid: de74ee0bb953b6b468db2067fb1efe19,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8926197038035428877, guid: de74ee0bb953b6b468db2067fb1efe19,
         type: 3}

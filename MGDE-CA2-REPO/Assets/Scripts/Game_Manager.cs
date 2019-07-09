@@ -96,11 +96,7 @@ public class Game_Manager : MonoBehaviour
             GameOverScreen.SetActive(true);
             Time.timeScale = 0;
 
-            if (controltype.getVibration())
-            {
-                Debug.Log("Vibrate");
-                Handheld.Vibrate();
-            }
+           
 
 
         }
@@ -112,7 +108,13 @@ public class Game_Manager : MonoBehaviour
             timetext.text = "Time Taken: " + TimeTaken.ToString("0.00");
             end = true;
             Time.timeScale = 0;
-            
+            if (controltype.getVibration())
+            {
+                Debug.Log("Vibrate");
+                Handheld.Vibrate();
+            } //vibrate on death
+
+
         }
         TimeTaken += Time.deltaTime; //time taken throughout the game
         
