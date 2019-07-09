@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: -145}
+  m_AnchoredPosition: {x: 32.4, y: -129.8}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4689203595752929092
@@ -79,9 +79,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Audio\r\n\"Bells3\"\r\n\"PowerUp9\"\r\n\"Hypnotic-Puzzle3\"\r\n\"Mind Bender\"\r\nby
-    Eric Matyas\r\nwww.soundimage.org\r\n\r\nAdditional sound effects from https://www.zapsplat.com\r\n\r\n<a
-    href=\u201Dhttps://www.zapsplat.com\u201D>Additional sound effects from zapsplat.com</a>\r\n\r\nUnity
-    assets\r\nJoystick Pack\r\nNavMesh"
+    Eric Matyas\r\nwww.soundimage.org\r\n\r\nAdditional sound effects from https://www.zapsplat.com\r\n\r\nUnity
+    assets\r\nJoystick Pack\r\nNavMesh\n\nTabel by Intercido\r\n\r\nSten Ulfsson\r\n\r\nhttp://cliparts.co/printable-lightning-bolt
+    (Power Symbol)\r\n\r\nhttp://pngimg.com/download/36943 (Coins)\r\n\r\nhttps://www.kisspng.com/png-battery-charger-icon-cartoon-battery-253427/
+    (Bat)"
 --- !u!1 &8820383748772021800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8820383748990426602
 RectTransform:
   m_ObjectHideFlags: 0
